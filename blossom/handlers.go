@@ -18,7 +18,7 @@ import (
 func (bs BlossomServer) handleUploadCheck(w http.ResponseWriter, r *http.Request) {
 	auth, err := readAuthorization(r)
 	if err != nil {
-		blossomError(w, err.Error(), 400)
+		blossomError(w, err.Error(), 401)
 		return
 	}
 	if auth == nil {
